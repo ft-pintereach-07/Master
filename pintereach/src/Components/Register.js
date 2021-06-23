@@ -1,6 +1,15 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
+const Reg = styled.div`
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #4A98E6;
+    height: 25vh;
+`
 
 class Register extends React.Component {
    state = {
@@ -31,19 +40,19 @@ class Register extends React.Component {
     }
     render() {
     return(
-        <div className='reg-form'>
-            <form>
-                <lable>Username:
+        <Reg className='reg-form'>
+            <form onSubmit={this.login}>
+                <label>Username:
                     <input type='text' name='username' value={this.state.login.username} onChange={this.handleChange}/>
-                </lable>
-                <lable>Password:
+                </label>
+                <label>Password:
                     <input type='password' name='password' value={this.state.login.password} onChange={this.handleChange}/>
-                </lable>
-                <lable>Email: 
+                </label>
+                <label>Email: 
                     <input type='email' name='email' value={this.state.login.email} onChange={this.handleChange}/>
-                </lable>
+                </label>
             </form>
-        </div>
+        </Reg>
     )
 }
 }

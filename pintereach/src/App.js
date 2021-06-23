@@ -11,8 +11,14 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1>Pintereach</h1>
-        {/* <Link to='/Register' component={Register}>Register</Link> */}
+        {/* <Link to='/register' component={Register}>Register</Link> */}
         </header>
+      </div>
+      <div className='app-body'>
+        <Switch>
+          <Route path='/Register' component={Register}/>
+          <Route component={Register}/>
+        </Switch>
       </div>
     </Router>
   );
