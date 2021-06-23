@@ -9,7 +9,7 @@ const Reg = styled.div`
     justify-content: space-evenly;
     background-color: #4A98E6;
     height: 25vh;
-`
+`;
 
 class Register extends React.Component {
    state = {
@@ -51,6 +51,7 @@ class Register extends React.Component {
                 <label>Email: 
                     <input type='email' name='email' value={this.state.login.email} onChange={this.handleChange}/>
                 </label>
+                <button className='register' onSubmit={this.login}>Register</button>
             </form>
         </Reg>
     )
