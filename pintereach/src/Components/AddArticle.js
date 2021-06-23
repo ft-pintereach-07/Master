@@ -36,7 +36,7 @@ const AddArticle = () => {
             console.log(err);
         })
 
-        setValues(initialValues);
+        // setValues(initialValues);
 
     return(
         <div>

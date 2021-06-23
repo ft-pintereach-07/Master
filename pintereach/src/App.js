@@ -1,10 +1,12 @@
 // import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-import Register from './Components/Register';
+import register from './Components/Register';
 import PrivateRoute from './Components/PrivateRoute';
+import ArticleList from './Components/ArticleList';
 
 
+const logout = () => { localStorage.removeItem('token')}
 
 function App() {
   return (
@@ -15,11 +17,15 @@ function App() {
         {/* <Link to='/register' component={Register}>Register</Link> */}
         </header>
       </div>
+      <div>
+        {localStorage.getItem('token') && <Link to='/protected'/>}
+        <Link onClick={logout}>Logout Here</Link>
+      </div>
       <div className='app-body'>
         <Switch>
-          {/* <PrivateRoute exact path='/' component={''} /> */}
-            <Route path='/Register' component={Register}/>
-            <Route component={Register}/>
+          {/* <PrivateRoute exact path='/ArticleList' component={'ArticleList'} /> */}
+            <Route path='/register' component={register}/>
+            <Route component={register}/>
         </Switch>
       </div>
     </Router>
