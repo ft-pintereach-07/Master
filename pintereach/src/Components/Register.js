@@ -22,13 +22,13 @@ class Register extends React.Component {
 
     handleChange = e => {
         this.setState({
-            login: {...this.state.login, [e.target.name]: e.target.value}
+            register: {...this.state.login, [e.target.name]: e.target.value}
         })  
     }
 
-    login = e => {
+    register = e => {
         e.prevendDefault();
-        axios.post('', this.state.login)
+        axios.post('', this.state.register)
         .then(res => {
             console.log(res)
             localStorage.setItem('token', res.data.payload);
@@ -41,7 +41,7 @@ class Register extends React.Component {
     render() {
     return(
         <Reg className='reg-form'>
-            <form onSubmit={this.login}>
+            <form onSubmit={this.register}>
                 <label>Username:
                     <input type='text' name='username' value={this.state.login.username} onChange={this.handleChange}/>
                 </label>
@@ -51,7 +51,7 @@ class Register extends React.Component {
                 <label>Email: 
                     <input type='email' name='email' value={this.state.login.email} onChange={this.handleChange}/>
                 </label>
-                <button className='register' onSubmit={this.login}>Register</button>
+                <button className='register' onSubmit={this.register}>Register</button>
             </form>
         </Reg>
     )
