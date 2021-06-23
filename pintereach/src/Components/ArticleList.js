@@ -1,5 +1,6 @@
 import React from 'react';
 import { axiosWithAuth } from '../Authorization/axiosAuth';
+import AddArticle from './AddArticle';
 
 
 class ArticleList extends React.Component {
@@ -26,7 +27,16 @@ class ArticleList extends React.Component {
     render() {
         return (
             <div>
-                
+                <AddArticle getArticles={this.getArticles} articles={this.state.articles}/>
+
+                {this.state.articles.map((article) => {
+                    return(
+                        <div className='article-list'>
+                            <p className='title'>{article.title}</p>
+                            <p className='author'>{article.author}</p>
+                        </div>
+                    )
+                })}
             </div>
         )
     }
