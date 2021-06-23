@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import Register from './Components/Register';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 
@@ -16,8 +17,9 @@ function App() {
       </div>
       <div className='app-body'>
         <Switch>
-          <Route path='/Register' component={Register}/>
-          <Route component={Register}/>
+          {/* <PrivateRoute exact path='/' component={''} /> */}
+            <Route path='/Register' component={Register}/>
+            <Route component={Register}/>
         </Switch>
       </div>
     </Router>
