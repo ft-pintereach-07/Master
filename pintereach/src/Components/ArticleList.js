@@ -27,6 +27,7 @@ class ArticleList extends React.Component {
     render() {
         return (
             <div>
+                <h1>Articles</h1>
                 <AddArticle getArticles={this.getArticles} articles={this.state.articles}/>
 
                 {this.state.articles.map((article) => {
