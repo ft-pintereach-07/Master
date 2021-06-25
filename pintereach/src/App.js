@@ -23,7 +23,7 @@ function App() {
       </div>
       <div className='app-body'>
         <Switch>
-          {/* <PrivateRoute exact path='/ArticleList' component={'ArticleList'} /> */}
+          <PrivateRoute exact path='/ArticleList' component={'ArticleList'} />
             <Route path='/register' component={register}/>
             <Route component={register}/>
         </Switch>
